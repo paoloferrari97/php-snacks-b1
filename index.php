@@ -139,6 +139,34 @@ $db = [
     ]
 ];
 
+/* Snack 7
+Creare un array contenente qualche alunno di un’ipotetica classe. 
+Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. 
+Stampare Nome, Cognome e la media dei voti di ogni alunno. */
+
+$alunni = [
+    [
+        "nome" => "Paolo",
+        "cognome" => "Ferrari",
+        "voti" => [10, 10, 10, 10, 10, 10]
+    ],
+    [
+        "nome" => "Mario",
+        "cognome" => "Mariotti",
+        "voti" => [4, 5, 4.5, 6.5, 7, 8.5]
+    ],
+    [
+        "nome" => "Luigi",
+        "cognome" => "Verdi",
+        "voti" => [2.5, 7, 6, 5, 4, 6.5]
+    ],
+    [
+        "nome" => "Giovanni",
+        "cognome" => "Bianchi",
+        "voti" => [4, 5, 6, 7, 2, 8]
+    ],
+];
+
 ?>
 
 <!DOCTYPE html>
