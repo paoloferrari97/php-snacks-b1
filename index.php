@@ -155,6 +155,7 @@ $paragrafo_2 = explode(".", $paragrafo);
             </p>
         <?php } ?>
 
+        <!-- OPPURE COSì MA PIù COMPLICATO (C'è UN CICLO IN PIù) -->
         <!--<?php for ($i = 0; $i < count($val); $i++) { ?>
             <?php foreach ($val[$i] as $keyy => $vall) { ?>
                 <h5>
@@ -165,6 +166,7 @@ $paragrafo_2 = explode(".", $paragrafo);
                 </p>
             <?php } ?>
         <?php } ?>-->
+
     <?php } ?>
 
     <h2>Snack 4</h2>
