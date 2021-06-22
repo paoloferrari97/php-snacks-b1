@@ -135,13 +135,20 @@ while (count($numeri_casuali) < 15) {
 
     <h2>Snack 3</h2>
 
-    <?php for ($i = 0; $i < count($posts); $i++) {
-    ?>
-        <h4>
-            <?php echo $posts[$i];
-            ?>
-
-        </h4>
+    <?php foreach ($posts as $key => $val) { ?>
+        <h3>
+            <?php echo $key; ?>
+        </h3>
+        <?php for ($i = 0; $i < count($val); $i++) { ?>
+            <?php foreach ($val[$i] as $keyy => $vall) { ?>
+                <h5>
+                    <?php echo $keyy; ?>:
+                </h5>
+                <p>
+                    <?php echo $vall; ?>
+                </p>
+            <?php } ?>
+        <?php } ?>
     <?php } ?>
 
     <h2>Snack 4</h2>
