@@ -38,9 +38,15 @@ Passare come parametri GET name, mail e age e verificare (cercando i metodi che 
 che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero.
 Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” */
 
-$name = $_GET("name");
-$mail = $_GET("mail");
-$age = $_GET("age");
+$name = $_GET["name"];
+$mail = $_GET["mail"];
+$age = $_GET["age"];
+
+if (strlen($name) > 3 && strpos($mail, ".") && strpos($mail, "@") && is_numeric($age)) {
+    $esito_2 = "Accesso riuscito";
+} else {
+    $esito_2 = "Accesso negato";
+}
 
 ?>
 
@@ -63,6 +69,12 @@ $age = $_GET("age");
             <?php echo $partite[$i]["squadra_casa"]; ?> - <?php echo $partite[$i]["squadra_ospite"]; ?> | <?php echo $partite[$i]["punti_casa"]; ?>-<?php echo $partite[$i]["punti_ospite"]; ?>
         </p>
     <?php } ?>
+
+    <h2>Snack 2</h2>
+
+    <p>
+        <?php echo $esito_2; ?>
+    </p>
 
 </body>
 
