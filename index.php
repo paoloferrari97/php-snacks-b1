@@ -105,6 +105,13 @@ while (count($numeri_casuali) < 15) {
     }
 }
 
+/* Snack 5
+Prendere un paragrafo abbastanza lungo, contenente diverse frasi. 
+Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo. */
+
+$paragrafo = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore aspernatur enim reprehenderit asperiores recusandae. Cum natus quaerat minus hic quibusdam corrupti, provident illo, animi ipsa ea voluptas ab, architecto delectus sint vero rem maxime molestiae. Ab, dolorem officiis ad ex quas quisquam dolores eaque vitae repellat velit similique quae expedita aliquam laborum cumque eum nihil blanditiis. Et consequatur minus temporibus alias aliquam nihil commodi quasi adipisci, veritatis architecto ab omnis odit accusamus fugiat magni quas debitis. Enim similique cum voluptate? Ratione, error doloribus tempore, sint commodi consequatur recusandae expedita veritatis minima in voluptatibus doloremque earum pariatur inventore voluptas harum unde!";
+$paragrafo_2 = explode(".", $paragrafo);
+
 ?>
 
 <!DOCTYPE html>
@@ -156,6 +163,18 @@ while (count($numeri_casuali) < 15) {
     <?php for ($i = 0; $i < count($numeri_casuali); $i++) { ?>
         <p>
             <?php echo $numeri_casuali[$i] ?>
+        </p>
+    <?php } ?>
+
+    <h2>Snack 5</h2>
+    <h4>Paragrafo originale:</h4>
+    <p>
+        <?php echo $paragrafo; ?>
+    </p>
+    <h4>Paragrafo separato:</h4>
+    <?php for ($i = 0; $i < count($paragrafo_2); $i++) { ?>
+        <p>
+            <?php echo $paragrafo_2[$i]; ?>
         </p>
     <?php } ?>
 
