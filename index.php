@@ -149,6 +149,15 @@ $db = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snacks</title>
+    <style>
+        .teachers {
+            background-color: grey;
+        }
+
+        .pm {
+            background-color: green;
+        }
+    </style>
 </head>
 
 <body>
@@ -214,6 +223,21 @@ $db = [
         <p>
             <?php echo $paragrafo_2[$i]; ?>
         </p>
+    <?php } ?>
+
+    <h2>Snack 6</h2>
+
+    <?php foreach ($db as $key => $val) { ?>
+        <div class="<?php echo $key; ?>">
+            <h3>
+                <?php echo $key; ?>
+            </h3>
+            <?php foreach ($val as $key2 => $val2) { ?>
+                <p>
+                    <?php echo $val2["name"]; ?> <?php echo $val2["lastname"]; ?>
+                </p>
+            <?php } ?>
+        </div>
     <?php } ?>
 
 </body>
