@@ -112,6 +112,33 @@ Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo par
 $paragrafo = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore aspernatur enim reprehenderit asperiores recusandae. Cum natus quaerat minus hic quibusdam corrupti, provident illo, animi ipsa ea voluptas ab, architecto delectus sint vero rem maxime molestiae. Ab, dolorem officiis ad ex quas quisquam dolores eaque vitae repellat velit similique quae expedita aliquam laborum cumque eum nihil blanditiis. Et consequatur minus temporibus alias aliquam nihil commodi quasi adipisci, veritatis architecto ab omnis odit accusamus fugiat magni quas debitis. Enim similique cum voluptate? Ratione, error doloribus tempore, sint commodi consequatur recusandae expedita veritatis minima in voluptatibus doloremque earum pariatur inventore voluptas harum unde!";
 $paragrafo_2 = explode(".", $paragrafo);
 
+/* Snack 6
+Utilizzare questo array: https://pastebin.com/CkX3680A. 
+Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde. */
+
+$db = [
+    'teachers' => [
+        [
+            'name' => 'Michele',
+            'lastname' => 'Papagni'
+        ],
+        [
+            'name' => 'Fabio',
+            'lastname' => 'Forghieri'
+        ]
+    ],
+    'pm' => [
+        [
+            'name' => 'Roberto',
+            'lastname' => 'Marazzini'
+        ],
+        [
+            'name' => 'Federico',
+            'lastname' => 'Pellegrini'
+        ]
+    ]
+];
+
 ?>
 
 <!DOCTYPE html>
