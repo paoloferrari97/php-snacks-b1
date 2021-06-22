@@ -268,6 +268,27 @@ $alunni = [
         </div>
     <?php } ?>
 
+    <h2>Snack 7</h2>
+
+    <?php for ($i = 0; $i < count($alunni); $i++) { ?>
+        <div>
+            <p>Nome: <?php echo $alunni[$i]["nome"] ?></p>
+            <p>Cognome: <?php echo $alunni[$i]["cognome"] ?></p>
+            <p>
+                <?php
+                $somma_voti = 0;
+                $media = 0;
+                for ($d = 0; $d < count($alunni[$i]["voti"]); $d++) {
+                    $somma_voti += $alunni[$i]["voti"][$d];
+                }
+                $media = $somma_voti / count($alunni[$i]["voti"]);
+                echo round($media, 2);
+                ?>
+            </p>
+        </div>
+    <?php } ?>
+
+
 </body>
 
 </html>
