@@ -94,6 +94,17 @@ $posts = [
     ],
 ];
 
+/* Snack 4
+Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta */
+
+$numeri_casuali = [];
+while (count($numeri_casuali) < 15) {
+    $n_random = rand(1, 100);
+    if (!in_array($n_random, $numeri_casuali)) {
+        $numeri_casuali[] = $n_random;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -131,6 +142,14 @@ $posts = [
             ?>
 
         </h4>
+    <?php } ?>
+
+    <h2>Snack 4</h2>
+
+    <?php for ($i = 0; $i < count($numeri_casuali); $i++) { ?>
+        <p>
+            <?php echo $numeri_casuali[$i] ?>
+        </p>
     <?php } ?>
 
 </body>
