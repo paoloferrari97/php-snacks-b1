@@ -34,11 +34,15 @@ $ads = [
 
 ];
 
-$ads_random = rand(0, count($ads));
+/* $ads_random = rand(0, count($ads)); */
 
-while (!$ads[$ads_random]['is_active']) {
+/* while (!$ads[$ads_random]['is_active']) {
     $ads_random = rand(0, count($ads));
-}
+} */
+
+do {
+    $ads_random = rand(0, count($ads));
+} while (!$ads[$ads_random]['is_active']);
 
 ?>
 
