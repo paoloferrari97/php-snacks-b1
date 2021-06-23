@@ -41,7 +41,7 @@ $ads = [
 } */
 
 do {
-    $ads_random = rand(0, count($ads));
+    $ads_random = rand(0, count($ads) - 1);
 } while (!$ads[$ads_random]['is_active']);
 
 ?>
