@@ -1,7 +1,7 @@
-<!-- Snack 3 A
-Partiamo da questo array di hotel. https://www.codepile.net/pile/OEWY7Q1G
-Stampare tutti i nostri hotel con tutti i dati disponibili.
-Avremo un file PHP con il nostro “database” e un file con tutta la logica. -->
+<!-- Snack 3B
+Attraverso un parametro GET da inserire direttamente nell’url (uno alla volta), 
+filtrare gli hotel che hanno un parcheggio, numero minimo di stelle o massima lontananza dal centro.
+Se non c’è un filtro, visualizzare come in precedenza tutti gli hotel -->
 
 <?php
 
@@ -45,6 +45,43 @@ $hotels = [
 
 ];
 
+$parcheggio = $_GET["parcheggio"]; //si o no
+$stelle = $_GET["stelle"];
+$distanza_centro = $_GET["distanza"];
+
+$hotels_filtrati = [];
+
+if (isset($parcheggio)) {
+    if ($parcheggio == 'si') {
+        for ($i = 0; $i < count($hotels); $i++) {
+            if ($hotels[$i]['parking']) {
+                $hotels_filtrati[] = $hotels[$i];
+            }
+        }
+    } else {
+        for ($i = 0; $i < count($hotels); $i++) {
+            if (!$hotels[$i]['parking']) {
+                $hotels_filtrati[] = $hotels[$i];
+            }
+        }
+    }
+} else if (isset($stelle)) {
+    for ($i = 0; $i < count($hotels); $i++) {
+        if ($hotels[$i]['vote'] >= $stelle) {
+            $hotels_filtrati[] = $hotels[$i];
+        }
+    }
+} else if (isset($distanza_centro)) {
+    for ($i = 0; $i < count($hotels); $i++) {
+        if ($hotels[$i]['distance_to_center'] <= $distanza_centro) {
+            $hotels_filtrati[] = $hotels[$i];
+        }
+    }
+} else {
+    $hotels_filtrati = $hotels;
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +96,7 @@ $hotels = [
 
 <body>
 
-    <?php foreach ($hotels as $hotel) { ?>
+    <?php foreach ($hotels_filtrati as $hotel) { ?>
         <?php foreach ($hotel as $key => $value) { ?>
             <p><?php echo $key; ?>: <?php echo $value; ?></p>
         <?php } ?>
