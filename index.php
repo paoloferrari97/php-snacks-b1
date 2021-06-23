@@ -42,6 +42,9 @@ $name = $_GET["name"];
 $mail = $_GET["mail"];
 $age = $_GET["age"];
 
+//filter_var($_GET["mail"], FILTER_VALIDATE_EMAIL)   <-- si può usare questo (da in risposta vero o falso perciò lo posso mettere in un if)
+
+
 if (strlen($name) > 3 && strpos($mail, ".") && strpos($mail, "@") && is_numeric($age)) {
     $esito_2 = "Accesso riuscito";
 } else {
